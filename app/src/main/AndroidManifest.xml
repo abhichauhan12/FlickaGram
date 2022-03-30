@@ -24,7 +24,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.example.flickagram.fileproviders"
+            android:authorities="com.example.flickagram.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

@@ -2,7 +2,6 @@ package com.example.flickagram.ui.home.screen_first
 
 import android.os.Bundle
 import android.view.View
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
@@ -28,7 +27,7 @@ class ScreenFirst : Fragment(R.layout.fragment_screen_first) {
 
     private val homeViewModel by activityViewModels<HomeViewModel>()
 
-    private val linearLayoutManager by lazy { LinearLayoutManager(requireContext()) }
+    private lateinit var linearLayoutManager : LinearLayoutManager
 
     private val infiniteScrollListener by lazy {
         InfiniteScrollListener(linearLayoutManager, work = {
@@ -43,6 +42,7 @@ class ScreenFirst : Fragment(R.layout.fragment_screen_first) {
         binding.lifecycleOwner = this
 
 
+        linearLayoutManager = LinearLayoutManager(requireContext())
 
         binding.listItemContainer.apply {
             adapter = homeAdapter
