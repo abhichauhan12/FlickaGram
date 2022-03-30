@@ -21,7 +21,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:id="@+id/list_item_container"
         tools:listitem="@layout/list_item_screen_first"
-        android:background="@color/purple_700"
+        android:background="@color/dark_grey"
         />
 
         <TextView

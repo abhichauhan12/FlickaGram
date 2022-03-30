@@ -9,11 +9,15 @@
         android:name="com.example.flickagram.ui.home.screen_first.ScreenFirst"
         android:label="ScreenFirst" >
         <action
-            android:id="@+id/action_screenFirst_to_screenSecond"
-            app:destination="@id/screenSecond" />
+            android:id="@+id/action_screenFirst_to_viewPagerScreenSecond"
+            app:destination="@id/viewPagerScreenSecond" />
     </fragment>
     <fragment
-        android:id="@+id/screenSecond"
-        android:name="com.example.flickagram.ui.home.screen_second.ScreenSecond"
-        android:label="ScreenSecond" />
+        android:id="@+id/viewPagerScreenSecond"
+        android:name="com.example.flickagram.ui.home.screen_second.viewpager.ViewPagerScreenSecond"
+        android:label="ViewPagerScreenSecond" >
+        <argument
+            android:name="position"
+            app:argType="integer" />
+    </fragment>
 </navigation>
