@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/screenFirst">
+
+    <fragment
+        android:id="@+id/screenFirst"
+        android:name="com.example.flickagram.ui.home.screen_first.ScreenFirst"
+        android:label="ScreenFirst" >
+        <action
+            android:id="@+id/action_screenFirst_to_screenSecond"
+            app:destination="@id/screenSecond" />
+    </fragment>
+    <fragment
+        android:id="@+id/screenSecond"
+        android:name="com.example.flickagram.ui.home.screen_second.ScreenSecond"
+        android:label="ScreenSecond" />
+</navigation>

@@ -3,9 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/abhis/Desktop/FlickaGram/app/src/main/res/drawable/scrim_screen.xml" value="0.3075" />
+        <entry key="..\:/Users/abhis/Desktop/FlickaGram/app/src/main/res/layout/activity_home.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/abhis/Desktop/FlickaGram/app/src/main/res/layout/activity_main.xml" value="0.5401041666666667" />
         <entry key="..\:/Users/abhis/Desktop/FlickaGram/app/src/main/res/layout/fragment_screen1.xml" value="0.5401041666666667" />
         <entry key="..\:/Users/abhis/Desktop/FlickaGram/app/src/main/res/layout/fragment_screen2.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/abhis/Desktop/FlickaGram/app/src/main/res/layout/fragment_screen_first.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/abhis/Desktop/FlickaGram/app/src/main/res/layout/list_item_screen1.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/abhis/Desktop/FlickaGram/app/src/main/res/layout/list_item_screen_first.xml" value="0.5268518518518519" />
       </map>
     </option>
   </component>

@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.screen2.Screen2">
+        tools:context=".ui.home.screen_second.ScreenSecond">
 
         <androidx.viewpager2.widget.ViewPager2
             android:layout_width="0dp"

@@ -6,7 +6,7 @@
     <data>
         <variable
             name="photoItem"
-            type="com.example.flickagram.domian.model.Photos" />
+            type="com.example.flickagram.domian.model.Photo" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,13 +15,16 @@
 
         <ImageView
             android:layout_width="0dp"
-            android:layout_height="160dp"
+            android:layout_height="256dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             android:id="@+id/image_list_item"
-            tools:src="@color/teal_200" />
+            tools:src="@color/teal_200"
+            android:scaleType="centerCrop"
+            loadImage="@{photoItem.url}"
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -32,8 +35,12 @@
             android:id="@+id/image_title_list_item"
             tools:text="image title"
             android:text="@{photoItem.title}"
+            android:textAppearance="?textAppearanceHeadline6"
             android:padding="16dp"
-            android:background="" />
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:background="@drawable/scrim_screen" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
