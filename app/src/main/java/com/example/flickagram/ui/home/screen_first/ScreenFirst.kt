@@ -2,6 +2,7 @@ package com.example.flickagram.ui.home.screen_first
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
@@ -40,7 +41,6 @@ class ScreenFirst : Fragment(R.layout.fragment_screen_first) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentScreenFirstBinding.bind(view)
         binding.lifecycleOwner = this
-
 
         linearLayoutManager = LinearLayoutManager(requireContext())
 

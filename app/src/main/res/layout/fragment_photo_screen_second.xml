@@ -3,11 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-        <data>
-            <variable
-                name="photoItem"
-                type="com.example.flickagram.domian.model.Photo" />
-        </data>
+    <data>
+
+        <variable
+            name="photoItem"
+            type="com.example.flickagram.domian.model.Photo" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -15,45 +16,42 @@
         tools:context=".ui.home.screen_second.PhotoScreenSecond">
 
         <ImageView
+            android:id="@+id/thumbnail"
+            loadImage="@{photoItem.url}"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:background="@color/dark_grey"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toTopOf="@id/image_title"
-            android:id="@+id/thumbnail"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@tools:sample/avatars"
-            loadImage="@{photoItem.url}"
-            />
+            tools:src="@tools:sample/avatars" />
 
         <TextView
             android:id="@+id/share_link_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:background="#26272B"
             android:gravity="center"
             android:padding="16dp"
             android:text="@string/share_link"
-            android:textAppearance="?textAppearanceBody2"
-            android:background="#26272B"
-            app:background="?selectableItemBackgroundBorderless"
             android:textColor="@color/white"
+            app:background="?selectableItemBackgroundBorderless"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/share_image_text"
-            app:layout_constraintStart_toStartOf="parent"
-            />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/share_image_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:background="#26272B"
             android:gravity="center"
             android:padding="16dp"
-            android:textColor="@color/white"
             android:text="@string/share_image"
-            app:background="?selectableItemBackgroundBorderless"
             android:textAppearance="?textAppearanceBody2"
-            android:background="#26272B"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/share_link_text" />
@@ -66,13 +64,24 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:padding="16dp"
+            android:text="@{photoItem.title}"
             android:textAppearance="?textAppearanceHeadline6"
             android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@id/share_link_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:text="image title"
-            android:text="@{photoItem.title}"
+            tools:text="image title" />
+
+        <TextView
+            android:layout_width="2dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:textAppearance="?textAppearanceHeadline5"
+            app:layout_constraintBottom_toBottomOf="@id/share_link_text"
+            app:layout_constraintEnd_toStartOf="@id/share_image_text"
+            app:layout_constraintStart_toEndOf="@id/share_link_text"
+            app:layout_constraintTop_toTopOf="@id/share_link_text"
+
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

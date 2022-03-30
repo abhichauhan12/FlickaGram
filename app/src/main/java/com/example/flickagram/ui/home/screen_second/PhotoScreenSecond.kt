@@ -4,13 +4,13 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.core.content.FileProvider
-import com.bumptech.glide.request.transition.Transition
+import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.target.BitmapImageViewTarget
+import com.bumptech.glide.request.transition.Transition
 import com.example.flickagram.R
 import com.example.flickagram.databinding.FragmentPhotoScreenSecondBinding
 import com.example.flickagram.domian.model.Photo
@@ -19,9 +19,8 @@ import dagger.hilt.android.AndroidEntryPoint
 import java.io.File
 import java.io.FileOutputStream
 
-
 @AndroidEntryPoint
-class PhotoScreenSecond() : Fragment(R.layout.fragment_photo_screen_second) {
+class PhotoScreenSecond : Fragment(R.layout.fragment_photo_screen_second) {
 
     private lateinit var photo: Photo
     private lateinit var binding: FragmentPhotoScreenSecondBinding
@@ -39,6 +38,7 @@ class PhotoScreenSecond() : Fragment(R.layout.fragment_photo_screen_second) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentPhotoScreenSecondBinding.bind(view)
         binding.lifecycleOwner = this
+
         binding.photoItem = photo
 
         binding.shareLinkText.setOnClickListener {
@@ -48,7 +48,6 @@ class PhotoScreenSecond() : Fragment(R.layout.fragment_photo_screen_second) {
         binding.shareImageText.setOnClickListener { imageFilePath?.let { shareImage() } }
 
         loadImage()
-
     }
 
     private fun loadImage() {
