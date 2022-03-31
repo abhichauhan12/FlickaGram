@@ -61,12 +61,12 @@ class ScreenFirst : Fragment(R.layout.fragment_screen_first) {
                 homeViewModel.fetchStatus.collect {
                     when (it) {
                         FetchStatus.LOADING -> {
-                            if (homeViewModel.photoList.value.isNullOrEmpty())
+                            if (homeViewModel.photos.value.isNullOrEmpty())
                                 binding.emptyListText.visibility = View.VISIBLE
                         }
 
                         FetchStatus.FAILURE -> {
-                            if (homeViewModel.photoList.value.isNullOrEmpty())
+                            if (homeViewModel.photos.value.isNullOrEmpty())
                                 binding.emptyListText.visibility = View.VISIBLE
                         }
 
@@ -77,7 +77,7 @@ class ScreenFirst : Fragment(R.layout.fragment_screen_first) {
             }
 
             launch {
-                homeViewModel.photoList.collect {
+                homeViewModel.photos.collect {
                     homeAdapter.submitList(it)
                     binding.emptyListText.visibility = if (it.isEmpty()) View.VISIBLE else View.GONE
                 }
