@@ -10,7 +10,7 @@ import com.example.flickagram.domian.model.Photo
 
 
 class ScreenFirstAdapter (
-    private val inflater: LayoutInflater
+    private val onItemClick :(Int) -> Unit
 ) : ListAdapter<Photo, ScreenFirstAdapter.PhotoViewHolder>(DiffUtilCallback) {
 
     object DiffUtilCallback : DiffUtil.ItemCallback<Photo>() {
@@ -32,11 +32,18 @@ class ScreenFirstAdapter (
             binding.photoItem = photo
             binding.executePendingBindings()
         }
+
+        init {
+            binding.itemContainer.setOnClickListener {
+                val position : Int = adapterPosition
+                onItemClick(position)
+            }
+        }
     }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ScreenFirstAdapter.PhotoViewHolder {
-        return PhotoViewHolder(ListItemScreenFirstBinding.inflate(inflater, parent, false))
+        return PhotoViewHolder(ListItemScreenFirstBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
 
     override fun onBindViewHolder(holder: ScreenFirstAdapter.PhotoViewHolder, position: Int) {

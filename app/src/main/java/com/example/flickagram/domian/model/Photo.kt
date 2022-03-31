@@ -1,7 +1,10 @@
 package com.example.flickagram.domian.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Photo(
     @SerializedName("id")
     val id : Long,
@@ -13,8 +16,9 @@ data class Photo(
     val width : Int,
     @SerializedName("url_h")
     val url : String?
-)
+) : Parcelable
 
+@Parcelize
 data class Photos(
     @SerializedName("photo")
     var photoList : List<Photo>,
@@ -22,7 +26,7 @@ data class Photos(
     val currentPage : Int,
     @SerializedName("pages")
     val totalPagesCount : Int
-)
+): Parcelable
 
 data class PhotosBody(
     @SerializedName("photos")

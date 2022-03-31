@@ -18,7 +18,7 @@ class HomeViewModel @Inject constructor(private val networkRepository: NetworkRe
     ViewModel() {
 
     private var page = 1
-    private var hasNextPage = true
+    var hasNextPage = true
 
     private val _photosList = MutableStateFlow<List<Photo>>(ArrayList())
     val photoList = _photosList.asStateFlow()
@@ -27,7 +27,7 @@ class HomeViewModel @Inject constructor(private val networkRepository: NetworkRe
     val fetchStatus = _fetchStatus.asStateFlow()
 
     fun getPhotos() {
-        if (hasNextPage) {
+        if (hasNextPage && _fetchStatus.value != FetchStatus.LOADING) {
             viewModelScope.launch {
                 _fetchStatus.value = FetchStatus.LOADING
                 withContext(Dispatchers.IO) {
