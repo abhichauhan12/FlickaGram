@@ -34,7 +34,7 @@ class ViewPagerScreenSecond : Fragment(R.layout.fragment_view_pager_screen_secon
     private fun attachObservers() {
         lifecycleScope.launchWhenStarted {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                homeViewModel.photoList.collect { viewPagerAdapter.addFragments(it) }
+                homeViewModel.photos.collect { viewPagerAdapter.addFragments(it) }
             }
         }
     }
@@ -55,7 +55,7 @@ class ViewPagerScreenSecond : Fragment(R.layout.fragment_view_pager_screen_secon
                 super.onPageSelected(currentPosition)
 
                 if (homeViewModel.hasNextPage) {
-                    val currentTotalItems = homeViewModel.photoList.value.size
+                    val currentTotalItems = homeViewModel.photos.value.size
 
                     if (currentPosition >= currentTotalItems - 5) homeViewModel.getPhotos()
                 }
